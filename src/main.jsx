@@ -7,6 +7,8 @@ import paintingImage from '../assets/service_painting.png'
 import plumbingImage from '../assets/service_plumbing.png'
 import carpenterImage from '../assets/service_carpenter.png'
 import electricianImage from '../assets/service_electrician.png'
+import Seo from './components/Seo'
+import { homeSeo } from './seo/serviceSeo'
 
 const WHATSAPP_NUMBER = '919494364394'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqgvvqe'
@@ -60,7 +62,9 @@ function App() {
   )}`
 
   return (
-    <main>
+    <>
+      <Seo {...homeSeo} />
+      <main>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Vico Pest Management home">
           <span className="brand-mark">V</span>
@@ -175,7 +179,8 @@ function App() {
         <p>Vico Pest Management</p>
         <a href={whatsappLink} target="_blank" rel="noreferrer">WhatsApp us ↗</a>
       </footer>
-    </main>
+      </main>
+    </>
   )
 }
 
