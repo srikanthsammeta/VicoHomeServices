@@ -7,10 +7,11 @@ import paintingImage from '../assets/service_painting.png'
 import plumbingImage from '../assets/service_plumbing.png'
 import carpenterImage from '../assets/service_carpenter.png'
 import electricianImage from '../assets/service_electrician.png'
+import logoImage from '../assets/logo.jpg'
 import Seo from './components/Seo'
 import { homeSeo } from './seo/serviceSeo'
 
-const WHATSAPP_NUMBER = '919494364394'
+const WHATSAPP_NUMBER = '919515941920'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqgvvqe'
 
 const services = [
@@ -67,15 +68,15 @@ function App() {
       <main>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Vico Pest Management home">
-          <span className="brand-mark">V</span>
+          <img className="brand-mark" src={logoImage}></img>
           <span>Vico</span>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#services">Services</a>
-          <a href="#about">Why Vico</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="#contactNew">Contact</a>
         </nav>
-        <a className="header-call" href="#contact">
+        <a className="header-call" href="#contactNew">
           Request service
         </a>
       </header>
@@ -85,7 +86,7 @@ function App() {
           <p className="eyebrow">Home services, made simple</p>
           <h1>Care for every corner of your home.</h1>
           <p className="hero-summary">
-            Vico Pest Management brings dependable pest management and essential home services together in one place.
+            First primary serice of Vico Pest Management brings dependable pest management and essential home services together in one place.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="#contact">Book a service</a>
@@ -115,68 +116,45 @@ function App() {
               <div className="service-content">
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href="#contact">Request this service <span aria-hidden="true">↗</span></a>
+                <a href="#contactNew">Request this service <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="promise" id="about">
+      <section className="promise" id="contactNew">
         <div className="promise-number">One</div>
         <div>
           <p className="eyebrow">The Vico approach</p>
           <h2>One trusted call for your home.</h2>
           <p>We believe arranging a home service should feel straightforward. Tell us what needs attention, and we will help you take the next step with confidence.</p>
         </div>
-        <a className="text-link" href="#contact">Talk to our team <span aria-hidden="true">↓</span></a>
-      </section>
-
-      <section className="contact section" id="contact">
-        <div className="contact-copy">
+         <div className="contact-copy">
           <p className="eyebrow">Get in touch</p>
-          <h2>Let us know how we can help.</h2>
-          <p>Share a few details and our team will get back to you. Prefer a quick conversation? Message us directly on WhatsApp.</p>
+          <p><b>Share a few details and our team will get back to you. Prefer a quick conversation? Message us directly on WhatsApp.</b></p>
+          <p><b> Click below and share the details to Request Service !</b></p>
           <a className="whatsapp-link" href={whatsappLink} target="_blank" rel="noreferrer">
-            <span className="whatsapp-icon" aria-hidden="true">W</span>
+            <img className="brand-mark" src={logoImage}></img>
             Connect on WhatsApp
             <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <form className="contact-form" action={FORMSPREE_ENDPOINT} method="POST">
-          <input type="hidden" name="_subject" value="New Vico service request" />
-          <label>
-            Your name <span>*</span>
-            <input name="name" type="text" autoComplete="name" required />
-          </label>
-          <label>
-            Phone number <span>*</span>
-            <input name="phone" type="tel" autoComplete="tel" required />
-          </label>
-          <label>
-            Email address <small>Optional</small>
-            <input name="email" type="email" autoComplete="email" />
-          </label>
-          <label>
-            Service needed <span>*</span>
-            <select name="service" defaultValue="" required>
-              <option value="" disabled>Select a service</option>
-              {services.map((service) => <option key={service.title}>{service.title}</option>)}
-              <option>Other</option>
-            </select>
-          </label>
-          <label className="full-width">
-            Tell us a little more <small>Optional</small>
-            <textarea name="description" rows="4" />
-          </label>
-          <button className="button button-dark full-width" type="submit">Send request <span aria-hidden="true">→</span></button>
-          <p className="form-note">Fields marked <b>*</b> are required.</p>
-        </form>
       </section>
+       <div style={{height: 50} }>
 
+       </div>
+       <section className="promise" id="about">
+        <div className="promise-number">One</div>
+        <div>
+          <p className="eyebrow">The Vico approach</p>
+          <h2>Connect with us</h2>
+          <p><b>Office Address :</b> H No:267, Comsary Bazar, new Bowenpally, Secunderabad, Hyderabad-500011. <br></br><b>Contact Number :</b> +919515941920 <br></br> <b>Email :</b> vico.pest@gmail.com</p>
+        </div>
+      </section>
       <footer>
-        <a className="brand" href="#home"><span className="brand-mark">V</span><span>Vico</span></a>
-        <p>Vico Pest Management</p>
+        <a className="brand" href="#home"><img className="brand-mark" src={logoImage}></img><span>Vico</span></a>
+        <p>COPYRIGHT © VICO PEST MANAGEMENT SERVICE HYDERABAD All rights reserved</p>
         <a href={whatsappLink} target="_blank" rel="noreferrer">WhatsApp us ↗</a>
       </footer>
       </main>
