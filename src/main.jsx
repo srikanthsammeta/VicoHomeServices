@@ -146,11 +146,11 @@ const updateWhatsAppLink = function(){
        <p><b> Choose a service and Click on below connect on Whatsup and share the details to Request Service !</b></p>
         <br></br>
         <select id="servicesNew" >
-            <option value="pest-control" selected>Pest Control</option>
-            <option value="paint">Paint</option>
-            <option value="electrical">Electrician</option>
-            <option value="carpenter">Carpenter</option>
-            <option value="plumbing">Plumbing</option>
+            <option value="Pest Control" selected>Pest Control</option>
+            <option value="Painting">Painting</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Carpenter">Carpenter</option>
+            <option value="Plumbing">Plumbing</option>
         </select>
     </div>
     <br></br>
