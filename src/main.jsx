@@ -58,10 +58,19 @@ const services = [
 ]
 
 function App() {
+  
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    'Hello Vico Pest Management, I would like to know more about your services.',
+    'Hello Vico Pest Management, Im looking for a ${selectElement}.',
   )}`
-
+//updateWhatsAppLink();
+const updateWhatsAppLink = function(){
+  const selectElement = document.getElementById('servicesNew').value;
+ // alert(selectElement);
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hello Vico Pest Management, Im looking for a ${selectElement} service.`,
+  )}`
+  window.open(whatsappLink, '_blank');
+}
   return (
     <>
       <Seo {...homeSeo} />
@@ -133,12 +142,24 @@ function App() {
          <div className="contact-copy">
           <p className="eyebrow">Get in touch</p>
           <p><b>Share a few details and our team will get back to you. Prefer a quick conversation? Message us directly on WhatsApp.</b></p>
-          <p><b> Click below and share the details to Request Service !</b></p>
-          <a className="whatsapp-link" href={whatsappLink} target="_blank" rel="noreferrer">
+          <div class="select-container">
+       <p><b> Choose a service and Click on below connect on Whatsup and share the details to Request Service !</b></p>
+        <br></br>
+        <select id="servicesNew" >
+            <option value="pest-control" selected>Pest Control</option>
+            <option value="paint">Paint</option>
+            <option value="electrical">Electrician</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="plumbing">Plumbing</option>
+        </select>
+    </div>
+    <br></br>
+     <div onClick={updateWhatsAppLink}><a className="whatsapp-link" target="_blank" rel="noreferrer">
             <img className="brand-mark" src={logoImage}></img>
             Connect on WhatsApp
             <span aria-hidden="true">↗</span>
-          </a>
+          </a></div>
+          
         </div>
       </section>
        <div style={{height: 50} }>
